@@ -1,7 +1,11 @@
 FROM node:latest
 
-RUN npm install -g ganache-cli
+LABEL maintainer=peter@custode.eu
+
+RUN npm install -g ganache-cli geth
+
+COPY docker-entrypoint.sh /usr/local/bin/
 
 EXPOSE 8545
 
-ENTRYPOINT [ "ganache-cli" ]
+ENTRYPOINT [ "docker-entrypoint.sh" ]

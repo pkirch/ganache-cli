@@ -6,7 +6,7 @@ RUN npm install -g ganache-cli geth
 
 WORKDIR /usr/local/bin/
 
-COPY docker-entrypoint.sh /
+COPY docker-entrypoint.sh .
 
 EXPOSE 8545
 

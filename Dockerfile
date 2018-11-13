@@ -4,7 +4,9 @@ LABEL maintainer=peter@custode.eu
 
 RUN npm install -g ganache-cli geth
 
-COPY docker-entrypoint.sh /usr/local/bin/
+WORKDIR /usr/local/bin/
+
+COPY docker-entrypoint.sh /
 
 EXPOSE 8545
 
